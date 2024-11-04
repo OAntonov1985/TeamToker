@@ -25,9 +25,9 @@ export default function StartScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground
-                source={require("../../../assets/images/background.png")}
+                source={require("../../../assets/images/Untitled2.png")}
                 resizeMode="cover"
-                style={styles.image}>
+                style={[styles.image, styles.imagePosition]}>
                 <View style={styles.contentContainer}>
                     <StartScrereIconView />
                     <Title textStyle={{ color: 'blue', fontSize: 48, fontFamily: 'Roboto-BlackItalic' }}>TeamTocker</Title>
@@ -47,12 +47,17 @@ const styles = StyleSheet.create({
         flex: 1,
         marginBottom: 124,
         marginTop: 117,
-        backgroundColor: "gray",
         alignItems: "center",
         justifyContent: "space-between"
     },
     image: {
         flex: 1,
-        alignItems: "center"
-    }
+        alignItems: "center",
+        // width: "100%",
+        // height: "113%"
+    },
+    imagePosition: {
+        // left: -10,
+        // position: "absolute",
+    },
 });

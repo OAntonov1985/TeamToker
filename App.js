@@ -11,10 +11,10 @@ export default function App() {
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
-            {/* <StartScreen /> */}
+            <StartScreen />
             {/* <FirstScreen /> */}
             {/* <SecondScreen /> */}
-            <ThirdScreen />
+            {/* <ThirdScreen /> */}
         </View>
     );
 }
