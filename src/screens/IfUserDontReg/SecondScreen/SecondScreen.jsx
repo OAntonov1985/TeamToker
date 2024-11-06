@@ -30,11 +30,11 @@ export default function SecondScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground
-                source={require("../../../../assets/images/background.png")}
+                source={require("../../../../assets/images/Untitled4.png")}
                 resizeMode="cover"
                 style={styles.image}>
                 <View style={styles.contentContainer}>
-                    <NavigationButton title={"Пропустити"} />
+                    <NavigationButton title={"Пропустити"} nextComponent={"ThirdScreen"} />
                     <Title textStyle={{ fontFamily: 'Ubuntu-Bold' }}>Мотивуй</Title>
                     <ScreenText style={{ fontFamily: "Roboto-Regular", paddingRight: 62, paddingLeft: 62, marginBottom: 17 }}>
                         Додаток, який допоможе зробити тренувальнй процес цікавішим для спортсменів {'\n'}
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     contentContainer: {
         width: "100%",
         marginTop: 73,
-        backgroundColor: "gray",
         alignItems: "center",
         justifyContent: "space-between"
     },

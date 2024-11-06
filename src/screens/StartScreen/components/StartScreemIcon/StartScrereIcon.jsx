@@ -1,10 +1,13 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export default function StartScrereIconView() {
+    const navigation = useNavigation();
+    // console.log(navigation)
     return (
         // <View style={styles.container}>
         //     <LinearGradient
@@ -27,10 +30,15 @@ export default function StartScrereIconView() {
         //     /> */}
 
         // </View>
-        <Image
-            source={require("../../../../../assets/images/StartIconParts/Group 37.png")}
-            style={styles.container}
-        />
+        <Pressable
+            onPress={() =>
+                navigation.navigate('FirstScreen')
+            }>
+            <Image
+                source={require("../../../../../assets/images/StartIconParts/Group 37.png")}
+                style={styles.container}
+            />
+        </Pressable>
     )
 }
 

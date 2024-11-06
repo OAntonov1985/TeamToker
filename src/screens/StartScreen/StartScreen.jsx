@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { ImageBackground, StyleSheet, Pressable, View, SafeAreaView } from 'react-native';
 import StartScrereIconView from './components/StartScreemIcon/StartScrereIcon';
 import Title from './components/Title/Title';
 import { useFonts } from 'expo-font';
@@ -24,10 +24,11 @@ export default function StartScreen() {
     }
     return (
         <SafeAreaView style={styles.container}>
+            <></>
             <ImageBackground
                 source={require("../../../assets/images/Untitled2.png")}
                 resizeMode="cover"
-                style={[styles.image, styles.imagePosition]}>
+                style={styles.image}>
                 <View style={styles.contentContainer}>
                     <StartScrereIconView />
                     <Title textStyle={{ color: 'blue', fontSize: 48, fontFamily: 'Roboto-BlackItalic' }}>TeamTocker</Title>
@@ -53,11 +54,5 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         alignItems: "center",
-        // width: "100%",
-        // height: "113%"
-    },
-    imagePosition: {
-        // left: -10,
-        // position: "absolute",
-    },
+    }
 });

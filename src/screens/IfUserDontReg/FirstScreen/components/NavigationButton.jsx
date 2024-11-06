@@ -1,16 +1,19 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function NavigationButton({ title, onPres }) {
+export default function NavigationButton({ title, nextComponent }) {
+    const navigation = useNavigation();
     return (
-        <Pressable onPress={onPres} style={styles.button} >
-            <Text >{title}</Text>
+        <Pressable onPress={() =>
+            navigation.navigate(nextComponent)
+        } style={styles.button} >
+            <Text style={styles.text}>{title}</Text>
         </Pressable>
     )
 }
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "red",
         marginRight: 10,
         marginStart: "auto",
         marginBottom: 73,
@@ -18,7 +21,8 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
-        fontWeight: 700,
-        lineHeight: 18.2
+        fontWeight: "bold",
+        lineHeight: 18.2,
+        color: "white"
     }
 })

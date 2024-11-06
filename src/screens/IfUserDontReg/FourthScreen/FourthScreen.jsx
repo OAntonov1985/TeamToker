@@ -1,21 +1,18 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, View, SafeAreaView } from 'react-native';
 import Title from '../../StartScreen/components/Title/Title';
-import ScreenText from './components/ScreenText';
-import NavigationButton from './components/NavigationButton';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import LinearView from './components/BottomLines/LinearView';
-import EmptyView from "./components/BottomLines/EmptyView"
+import ButtonReg from "../../../UI/BottomButton/ButtonReg"
 
 SplashScreen.preventAutoHideAsync();
 
-export default function FirstScreen() {
+export default function FourthScreen() {
     const [loaded, error] = useFonts({
         'Ubuntu-Bold': require('../../../../assets/fonts/Ubuntu/Ubuntu-Bold.ttf'),
         'Roboto-Regular': require('../../../../assets/fonts/Roboto/Roboto-Regular.ttf'),
-        'Roboto-BoldItalic': require('../../../../assets/fonts/Roboto/Roboto-BoldItalic.ttf'),
+        'Roboto-Bold': require('../../../../assets/fonts/Roboto/Roboto-Bold.ttf'),
     });
 
     useEffect(() => {
@@ -27,27 +24,23 @@ export default function FirstScreen() {
     if (!loaded && !error) {
         return null;
     }
-
-
-
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground
-                source={require("../../../../assets/images/Untitled3.png")}
+                source={require("../../../../assets/images/Untitled1.png")}
                 resizeMode="cover"
                 style={styles.image}>
                 <View style={styles.contentContainer}>
-                    <NavigationButton title={"Пропустити"} nextComponent={"SecondScreen"} />
-                    <Title textStyle={{ fontFamily: 'Ubuntu-Bold', fontSize: 32 }}>Відстежуй</Title>
-                    <ScreenText style={{ fontFamily: "Roboto-Regular", marginRight: 70, marginLeft: 65, marginBottom: 78 }}>
-                        За допомогою додатку,
-                        ти зможеш відстежувати
-                        прогрес спортсменів
-                    </ScreenText>
-                    <View style={styles.linesContainer}>
-                        <LinearView />
-                        <EmptyView />
-                        <EmptyView />
+                    <View>
+                        <Title textStyle={{ fontFamily: 'Ubuntu-Bold' }}>TeamTocker</Title>
+                        <ImageBackground
+                            source={require("../../../../assets/images/StartIconParts/Frame 2608941.png")}
+                            resizeMode="cover"
+                            style={styles.iconImage}
+                        />
+                    </View>
+                    <View>
+                        <ButtonReg buttonText={"Зареєструватися"} textStyle={{ fontFamily: 'Roboto-Bold' }} />
                     </View>
                 </View>
             </ImageBackground>
@@ -61,10 +54,13 @@ const styles = StyleSheet.create({
         width: "100%"
     },
     contentContainer: {
+        flex: 1,
         width: "100%",
-        marginTop: 73,
+        marginTop: 144,
+        marginBottom: 46,
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        // backgroundColor: "gray"
     },
     image: {
         flex: 1,
@@ -76,5 +72,13 @@ const styles = StyleSheet.create({
         gap: 6,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    iconImage: {
+        height: 128,
+        width: 95,
+        margin: "auto",
+        position: "absolute",
+        top: 120,
+        left: 102
     }
 });

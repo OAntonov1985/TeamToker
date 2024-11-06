@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#FFF",
         lineHeight: 30,
-        textAlign: "center",
-        backgroundColor: "red"
+        textAlign: "center"
     }
 })
