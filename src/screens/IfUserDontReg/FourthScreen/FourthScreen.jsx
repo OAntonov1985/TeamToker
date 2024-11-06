@@ -40,7 +40,7 @@ export default function FourthScreen() {
                         />
                     </View>
                     <View>
-                        <ButtonReg buttonText={"Зареєструватися"} textStyle={{ fontFamily: 'Roboto-Bold' }} />
+                        <ButtonReg buttonText={"Зареєструватися"} textStyle={{ fontFamily: 'Roboto-Bold' }} nextComponent={"CoachSelectionScreen"} />
                     </View>
                 </View>
             </ImageBackground>
@@ -58,9 +58,7 @@ const styles = StyleSheet.create({
         width: "100%",
         marginTop: 144,
         marginBottom: 46,
-        alignItems: "center",
         justifyContent: "space-between",
-        // backgroundColor: "gray"
     },
     image: {
         flex: 1,
@@ -79,6 +77,6 @@ const styles = StyleSheet.create({
         margin: "auto",
         position: "absolute",
         top: 120,
-        left: 102
+        left: 169
     }
 });

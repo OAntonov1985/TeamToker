@@ -8,6 +8,7 @@ import FourthScreen from './src/screens/IfUserDontReg/FourthScreen/FourthScreen.
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RegistrationScreen from './src/screens/IfUserDontReg/RegistrationScreen/RegistrationScreen.jsx';
+import CoachSelectionScreen from './src/screens/IfUserDontReg/CoachSelectionScreen/CoachSelectionScreen.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
                     <Stack.Screen name="SecondScreen" component={SecondScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="ThirdScreen" component={ThirdScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="FourthScreen" component={FourthScreen} options={{ headerShown: false }} />
+                    <Stack.Screen name="CoachSelectionScreen" component={CoachSelectionScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>

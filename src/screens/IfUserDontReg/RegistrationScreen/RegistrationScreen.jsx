@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+import SubTitle from '../CoachSelectionScreen/components/SubTitle';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -30,17 +31,16 @@ export default function RegistrationScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <LinearGradient
-                colors={['#14DAB3', '#565FD7', '#161D73']}
-                start={{ x: 1, y: 1 }}
-                end={{ x: 0, y: 0 }}
-                style={styles.background}
+            <ImageBackground
+                source={require("../../../../assets/images/imageInSelectorScreen/bgColor.png")}
+                resizeMode="cover"
+                style={styles.image}
             >
                 <View style={styles.contentContainer}>
-                    <Title textStyle={{ fontFamily: 'Ubuntu-Medium' }}>Створити новий
-                        профіль</Title>
+                    <SubTitle textStyle={{ fontFamily: 'Ubuntu-Medium' }}>Створити новий
+                        профіль</SubTitle>
                 </View>
-            </LinearGradient>
+            </ImageBackground>
         </SafeAreaView>
     )
 }
@@ -56,5 +56,8 @@ const styles = StyleSheet.create({
     contentContainer: {
         backgroundColor: "gray",
         marginTop: 223
-    }
+    }, image: {
+        flex: 1,
+        // alignItems: "center"
+    },
 });
