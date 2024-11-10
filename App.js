@@ -9,6 +9,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RegistrationScreen from './src/screens/IfUserDontReg/RegistrationScreen/RegistrationScreen.jsx';
 import CoachSelectionScreen from './src/screens/IfUserDontReg/CoachSelectionScreen/CoachSelectionScreen.jsx';
+import RegistrationFormScreen from './src/screens/IfUserDontReg/RegistrationFormScreen/RegistrationFormScreen.jsx';
+import TeacherScreen from './src/screens/TeacherScreen.jsx';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +33,8 @@ export default function App() {
                     <Stack.Screen name="FourthScreen" component={FourthScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="CoachSelectionScreen" component={CoachSelectionScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} options={{ headerShown: false }} />
+                    <Stack.Screen name="RegistrationFormScreen" component={RegistrationFormScreen} options={{ headerShown: false }} />
+                    <Stack.Screen name="TeacherScreen" component={TeacherScreen} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
         </View>
@@ -39,7 +44,5 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
     },
-
 });
