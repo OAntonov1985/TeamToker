@@ -10,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RegistrationScreen from './src/screens/IfUserDontReg/RegistrationScreen/RegistrationScreen.jsx';
 import CoachSelectionScreen from './src/screens/IfUserDontReg/CoachSelectionScreen/CoachSelectionScreen.jsx';
 import RegistrationFormScreen from './src/screens/IfUserDontReg/RegistrationFormScreen/RegistrationFormScreen.jsx';
-import TeacherScreen from './src/screens/TeacherScreen.jsx';
+import TeacherScreen from './src/screens/TeacherScreen/TeacherScreen.jsx';
 
 
 const Stack = createNativeStackNavigator();

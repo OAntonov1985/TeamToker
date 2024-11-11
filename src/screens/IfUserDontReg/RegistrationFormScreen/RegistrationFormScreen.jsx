@@ -91,7 +91,7 @@ export default function RegistrationFormScreen() {
                                     onBlur={handleBlur('password')}
                                     value={values.password}
                                 />
-                                <ButtonReg nextComponent={"TeacherScreen"} buttonText="Зареєструватись" style={{ width: "100%", marginTop: 72, marginBottom: 50 }} textStyle={{ fontFamily: "Roboto-Bold" }} />
+                                <ButtonReg nextComponent={"TeacherScreen"} buttonText="Зареєструватись" style={{ width: "100%", marginTop: 40, marginBottom: 50 }} textStyle={{ fontFamily: "Roboto-Bold" }} />
                             </View>
                         )}
                     </Formik>
