@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import { Button, TextInput, View, StyleSheet, ImageBackground, SafeAreaView, Text, ScrollView } from 'react-native';
+import { TextInput, View, StyleSheet, ImageBackground, SafeAreaView, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import BackButton from '../../../UI/BackButton/BackButton';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -28,13 +28,16 @@ export default function RegistrationFormScreen() {
     }
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior='height'>
             <ImageBackground
                 source={require("../../../../assets/images/imageInSelectorScreen/bgColor.png")}
                 resizeMode="cover"
                 style={styles.image}>
                 <SafeAreaView style={{ height: 52, marginBottom: 26 }} />
-                <ScrollView style={styles.contetnContainer}>
+                <ScrollView style={[styles.contetnContainer]}
+                    contentContainerStyle={{ flexGrow: 1 }}
+                    keyboardShouldPersistTaps="handled"
+                >
                     <BackButton textStyle={{ fontFamily: "Roboto-Regular" }} />
                     <SubTitle textStyle={{ fontFamily: "Ubuntu-Medium", textAlign: "left", marginBottom: 38 }}>Введіть ваші данні</SubTitle>
                     <Formik style={styles.form}
@@ -97,7 +100,7 @@ export default function RegistrationFormScreen() {
                     </Formik>
                 </ScrollView>
             </ImageBackground>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 

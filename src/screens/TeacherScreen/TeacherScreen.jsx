@@ -8,6 +8,7 @@ import Calendar from "./components/Calendar";
 import Payment from "./components/Payment";
 import Star from "./components/Star";
 import Cup from "./components/Cup";
+import ViewIcon from "./components/ViewIcon"
 
 export default function TeacherScreen() {
     return (
@@ -16,11 +17,25 @@ export default function TeacherScreen() {
                 source={require("../../../assets/images/imageInSelectorScreen/bgColor.png")}
                 resizeMode="cover"
                 style={styles.container}>
-                <SafeAreaView style={{ height: 52, marginBottom: 26 }} />
-
-                <View>
-                    <Icon />
-                    {/* <SvgIcon width={24} height={24} /> */}
+                <SafeAreaView style={{ height: 52, marginBottom: 29 }} />
+                <View style={styles.mainContentView}>
+                    <View style={styles.iconSettings}>
+                        <Icon />
+                    </View>
+                    <View style={styles.teacherImageContainer} >
+                        <ImageBackground
+                            source={require("../../../assets/images/9c4d361cb9f54e38261e75afcd23b9b1.jpg")}
+                            resizeMode="cover"
+                            style={styles.logoImageSettings}
+                        />
+                    </View>
+                    <Text style={styles.subText} >Головний тренер</Text>
+                    <Text style={styles.titleText}>Долецький О.В.</Text>
+                    <View style={styles.selector}>
+                        <Text style={styles.textInSelector}>Ваші групи</Text>
+                        <View style={styles.viewInSelector}><ViewIcon /></View>
+                    </View>
+                    <Text style={styles.titleTextInMain}>Створіть свою {'\n'} команду</Text>
                 </View>
                 <View style={styles.arrowContainer}>
                     <Arrow />
@@ -83,12 +98,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
-    test: {
-        position: "absolute",
-        bottom: 18,
-        with: 35,
-        height: 35
-    },
     activeText: {
         color: '#0B82BD',
         fontSize: 12,
@@ -113,12 +122,85 @@ const styles = StyleSheet.create({
         right: 10,
         width: 65,
         height: 65,
-        // backgroundColor: "red"
     },
     cup: {
         position: "absolute",
         top: 22,
         left: 19,
         zIndex: 5
+    },
+    mainContentView: {
+        display: "flex",
+        // backgroundColor: "gray",
+        alignItems: "center"
+    },
+    iconSettings: {
+        position: "absolute",
+        right: 14
+    },
+    teacherImageContainer: {
+        width: 100,
+        height: 100,
+        borderRadius: 70,
+        borderWidth: 4,
+        borderColor: '#6B45F4',
+        overflow: 'hidden',
+        marginBottom: 8
+    },
+    logoImageSettings: {
+        flex: 1,
+    },
+    subText: {
+        color: "#FFF",
+        fontSize: 14,
+        lineHeight: 20,
+        letterSpacing: 0.25,
+        marginBottom: 4
+
+    },
+    titleText: {
+        color: "#FFF",
+        fontSize: 16,
+        fontWeight: "bold",
+        lineHeight: 20,
+        letterSpacing: 0.25,
+        marginBottom: 40
+    },
+    selector: {
+        display: "flex",
+        flexDirection: "row",
+        width: "91.6%",
+        height: 60,
+        paddingLeft: 16,
+        paddingRight: 8,
+        paddingVertical: 8,
+        backgroundColor: "rgba(240, 243, 250, 0.20)",
+        borderRadius: 18,
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderColor: "rgba(240, 243, 250, 0.20)",
+        borderWidth: 1,
+        marginBottom: 50
+    },
+    textInSelector: {
+        color: "#FFF",
+        fontSize: 20,
+        letterSpacing: 0.25
+    },
+    viewInSelector: {
+        width: 72,
+        height: 44,
+        backgroundColor: "#BFBEBE",
+        borderRadius: 30,
+        alignItems: "center",
+        justifyContent: "center",
+        borderColor: "#EAEEF4",
+        borderWidth: 1
+    },
+    titleTextInMain: {
+        color: "#FFF",
+        fontSize: 20,
+        fontWeight: "bold",
+        letterSpacing: 0.25
     }
 })
