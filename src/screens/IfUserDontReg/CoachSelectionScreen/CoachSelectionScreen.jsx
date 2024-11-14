@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         width: "100%",
-        marginTop: 76,
+        marginTop: 66,
         marginBottom: 20,
     },
     itemContainer: {
